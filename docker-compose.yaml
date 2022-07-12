@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/home/jovyan
+    ports:
+      - "8888:8888"
+    networks:
+      - my-network
+  db:
+    image: postgres:14.4
+    restart: always
+    environment:
+      POSTGRES_DB: "jupyterdb"
+      POSTGRES_USER: "jupyterdb_user"
+      POSTGRES_PASSWORD: "jupyterdb_user_123"
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - my_network
+networks:
+  my-network:
+    driver: bridge
+volumes: 
+  pgdata:
