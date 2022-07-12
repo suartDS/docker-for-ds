@@ -9,7 +9,7 @@ services:
     ports:
       - "8888:8888"
     networks:
-      - my-network
+      - my_network
   db:
     image: postgres:14.4
     restart: always
@@ -24,7 +24,7 @@ services:
     networks:
       - my_network
 networks:
-  my-network:
-    driver: bridge
+  my_network:
+      driver: bridge
 volumes: 
   pgdata:
