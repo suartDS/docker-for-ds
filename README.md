@@ -1,4 +1,3 @@
-# docker-for-ds
-Data Science Project Template
+# Data Science Project Template
 
-It's Docker image with a data science environment
+It's Docker image with a data science environment.
