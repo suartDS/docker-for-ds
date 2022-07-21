@@ -26,5 +26,5 @@ services:
 networks:
   my_network:
       driver: bridge
-volumes:  #true
+volumes:
   pgdata:
