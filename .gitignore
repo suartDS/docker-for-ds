@@ -4,7 +4,5 @@
 /.jupyter
 /.local
 /jupyter_files/.cache
-/jupyter_files/.ipynb_checkpoints
-/jupyter_files/.ipython
-/jupyter_files/.jupyter
 /jupyter_files/.local
+/jupyter_files/.ipynb_checkpoints
