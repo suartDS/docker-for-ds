@@ -1,12 +1,25 @@
 version: "3.9"
 services:
+  sqlite3:
+    container_name: sqlite3_container
+    image: nouchka/sqlite3:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      #Modify following line
+      - ./sqlitedata:/root/db/
+    ports:
+      - '9000:9000' # expose ports - HOST:CONTAINER
+    networks:
+      - my_network
+    restart: unless-stopped
   jupyter:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
       - ./jupyter_files:/home/jovyan
-    ports:
+    ports:  
       - "8888:8888"
     networks:
       - my_network
@@ -28,3 +41,4 @@ networks:
       driver: bridge
 volumes:
   pgdata:
+  sqlitedata:
