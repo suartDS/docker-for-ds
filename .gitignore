@@ -5,6 +5,7 @@
 /.local
 /jupyter_files
 /pgdata
+/sqlitedata
 /jupyter_files/.cache
 /jupyter_files/.local
 /jupyter_files/.ipynb_checkpoints
